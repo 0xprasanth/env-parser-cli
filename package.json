@@ -1,6 +1,6 @@
 {
     "name": "envconverter",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "bin/env-parser.js",
     "description": "A CLI tool to convert .env files into formats that can be easily pasted into Google Sheets, Excel, or other tools.",
     "bin": {
