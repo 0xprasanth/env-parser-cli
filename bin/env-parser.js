@@ -13,21 +13,21 @@ USAGE:
   envconverter <input-file> [output-file] [options]
 
 OPTIONS:
+  -o, --output <path>   Output file path
+  -f, --format <type>   Output format: csv | tsv | json | md
+                        Default: csv
   -h, --help           Show help
   -v, --version        Show version
-  -f, --format <type>  Output format: csv | tsv | json | md
-                       (default: csv)
 
 EXAMPLES:
   envconverter .env
-  envconverter .env output.csv
+  envconverter .env -o output.csv
   envconverter .env --format tsv
-  envconverter .env config.json --format json
-  envconverter .env --format md
+  envconverter .env --format json -o output.json
+  envconverter .env --format md -o output.md
 
 DESCRIPTION:
-  Converts .env files into formats easily pasteable into Google Sheets,
-  Excel, or other tools.
+  Converts .env files into formats easily pasteable into Google Sheets, Excel, or other tools.
 `);
 }
 
@@ -49,16 +49,18 @@ function parseArgs() {
   let format = "csv";
 
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === "-f" || args[i] === "--format") {
+    const arg = args[i];
+
+    if (arg === "-o" || arg === "--output") {
+      output = args[i + 1];
+      i++;
+    } else if (arg === "-f" || arg === "--format") {
       format = args[i + 1];
       i++;
-    } else if (!input) {
-      input = args[i];
-    } else if (!output) {
-      output = args[i];
+    } else if (!arg.startsWith("-") && !input) {
+      input = arg;
     }
   }
-
   if (!input) {
     console.error("❌ Input file required\n");
     printHelp();
