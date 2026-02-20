@@ -1,5 +1,11 @@
 # Env Parser CLI
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/envconverter">
+    <img src="https://img.shields.io/npm/v/envconverter?color=blue&label=npm%20version" />
+  </a>
+</p>
+
 A CLI tool to convert `.env` files into formats that can be easily pasted into Google Sheets, Excel, or other tools.
 
 ## Features
