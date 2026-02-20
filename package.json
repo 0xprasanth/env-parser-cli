@@ -1,15 +1,21 @@
 {
     "name": "envconverter",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "main": "bin/env-parser.js",
     "description": "A CLI tool to convert .env files into formats that can be easily pasted into Google Sheets, Excel, or other tools.",
     "bin": {
-      "envconverter": "./bin/env-parser.js"
+        "envconverter": "./bin/env-parser.js"
     },
-    "keywords": ["env", "cli", "dotenv", "csv", "tsv"],
+    "keywords": [
+        "env",
+        "cli",
+        "dotenv",
+        "csv",
+        "tsv"
+    ],
     "author": "0xprasanth",
     "license": "MIT",
     "engines": {
         "node": ">=20"
-      }
+    }
 }
