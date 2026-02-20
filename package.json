@@ -1,8 +1,15 @@
 {
-    "name": "env-parser-cli",
+    "name": "envparser",
     "version": "1.0.0",
-    "description": "Parse .env file to CSV",
+    "main": "bin/env-parser.js",
+    "description": "A CLI tool to convert .env files into formats that can be easily pasted into Google Sheets, Excel, or other tools.",
     "bin": {
       "envparser": "./bin/env-parser.js"
-    }
-  }
+    },
+    "keywords": ["env", "cli", "dotenv", "csv", "tsv"],
+    "author": "0xprasanth",
+    "license": "MIT",
+    "engines": {
+        "node": ">=20"
+      }
+}
