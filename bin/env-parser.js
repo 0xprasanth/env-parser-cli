@@ -7,10 +7,10 @@ const VERSION = "1.0.0";
 
 function printHelp() {
   console.log(`
-envparser - Convert .env file to spreadsheet-friendly formats
+envconverter - Convert .env file to spreadsheet-friendly formats
 
 USAGE:
-  envparser <input-file> [output-file] [options]
+  envconverter <input-file> [output-file] [options]
 
 OPTIONS:
   -h, --help           Show help
@@ -19,11 +19,11 @@ OPTIONS:
                        (default: csv)
 
 EXAMPLES:
-  envparser .env
-  envparser .env output.csv
-  envparser .env --format tsv
-  envparser .env config.json --format json
-  envparser .env --format md
+  envconverter .env
+  envconverter .env output.csv
+  envconverter .env --format tsv
+  envconverter .env config.json --format json
+  envconverter .env --format md
 
 DESCRIPTION:
   Converts .env files into formats easily pasteable into Google Sheets,
@@ -40,7 +40,7 @@ function parseArgs() {
   }
 
   if (args.includes("-v") || args.includes("--version")) {
-    console.log(`envparser v${VERSION}`);
+    console.log(`envconverter v${VERSION}`);
     process.exit(0);
   }
 
